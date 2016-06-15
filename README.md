@@ -69,3 +69,6 @@ If you have XCache or APC on your web-server these could be useful:
 * __CACHE_INTERVAL_BANNERS__ - cache lifetime for banner images (in seconds), if set to 0 images will NOT be cached.
 * __CACHE_INTERVAL_SCRIPTS__ - cache lifetime for for javascripts like popunder (in seconds), if set to 0 they will NOT be cached.
 * __CACHE_KEYS_LIMIT_BANNERS__ - the limit for number of allowed banner images to store in cache (to not overuse publisher resources), if set to 0 there will be no limit, so all the images will be cached.
+
+# Changelog
+* Keep abreast of ongoing changes and updates by checking out the project [CHANGELOG](https://github.com/EXADS/exads-adblock/blob/master/CHANGELOG.md)
