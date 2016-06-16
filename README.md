@@ -16,7 +16,7 @@
 ## Installing
 This solution has a frontend and backend scripts (**frontend_loader.js** and **backend_loader.php**) that have to be hosted on your server. See the latest version available : https://github.com/EXADS/exads-adblock/releases
 
-**Important note:** backend_loader.php needs access to cookies that are created on frontend, so it sould be hosted on the same domain (host) as the page where you are placing the addZone code.
+**Important note:** backend_loader.php needs access to cookies that are created on frontend, so it should be hosted on the same domain (host) as the page where you are placing the addZone code.
 
 
 The code can be downloaded like this:
