@@ -14,8 +14,10 @@
   OR [XCache](https://xcache.lighttpd.net/)
 
 ## Installing
-This solution has a frontend and backend scripts (**frontend_loader.js** and **backend_loader.php**) that have to be hosted on your server.
-See the latest version available : https://github.com/EXADS/exads-adblock/releases
+This solution has a frontend and backend scripts (**frontend_loader.js** and **backend_loader.php**) that have to be hosted on your server. See the latest version available : https://github.com/EXADS/exads-adblock/releases
+
+**Important note:** backend_loader.php needs access to cookies that are created on frontend, so it sould be hosted on the same domain (host) as the page where you are placing the addZone code.
+
 
 The code can be downloaded like this:
 ```bash
@@ -23,7 +25,6 @@ $ wget -q https://github.com/EXADS/exads-adblock/archive/v2.0.tar.gz
 $ tar -xf v2.0.tar.gz
 $ rm v2.0.tar.gz
 ```
-
 ###Displaying on page
 These lines have to be added once on the page (somewhere on top of \<body\>, above any ad zones that you want to add):
 ```javascript
@@ -33,11 +34,15 @@ These lines have to be added once on the page (somewhere on top of \<body\>, abo
 
 The following code is to declare an ad zone, put it in DOM where you want the zone to be displayed.
 You can add multiple banner blocks like this on page.
+
 To add a banner do the following (make sure to replace the value for idzone with your zone id, and the corresponding values for width and height):
 ```javascript
 <script type="text/javascript">
     //Code to add zones can be placed multiple times on page
     ExoLoader.addZone({"type": "banner", "width":"468", "height":"60", "idzone":"111"});
+
+    //If you want to use sub id, add a numeric sub parameter to object, passed to addZone
+    //ExoLoader.addZone({"type": "banner", "width":"468", "height":"60", "idzone":"111", "sub": "1"});
 </script>
 ```
 To add a popunder:
@@ -46,7 +51,6 @@ To add a popunder:
     ExoLoader.addZone({"type": "popunder", "idzone": "222"});
 </script>
 ```
-
 Add this to serve the ads on page, after all the addZone declarations.
 ```javascript
 <script type="text/javascript">
